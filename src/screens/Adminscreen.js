@@ -49,7 +49,7 @@ export default function Adminscreen() {
             </li>
           </ul>
 
-          <Switch>
+          <switch>
             <Route path="/admin" component={Userslist} exact />
             <Route path="/admin/userslist" component={Userslist} exact />
             <Route path="/admin/orderslist" component={Orderslist} exact />
@@ -60,7 +60,7 @@ export default function Adminscreen() {
               component={Editpizza}
               exact
             />
-          </Switch>
+          </switch>
         </div>
       </div>
     </div>

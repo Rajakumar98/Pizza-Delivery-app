@@ -5,10 +5,11 @@ import { deleteFromCart } from "../actions/cartActions";
 import Checkout from "../components/Checkout";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Redirect } from "react-router-dom";
+import { redirect } from "react-router-dom";
+
 export default function Cartscreen() {
   AOS.init();
-  const [redirect, setRedirect] = useState(false);
+  const [Redirect, setRedirect] = useState(false);
   const cartstate = useSelector((state) => state.cartReducer);
   const cartItems = cartstate.cartItems;
   var subtotal = cartItems.reduce((x, item) => x + item.price, 0);
@@ -26,7 +27,7 @@ export default function Cartscreen() {
       setRedirect(true);
     }, 2000);
   }
-  if (redirect) {
+  if (Redirect) {
     return <Redirect to="/orders" />;
   }
   return (
